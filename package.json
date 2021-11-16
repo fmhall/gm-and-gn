@@ -1,0 +1,25 @@
+{
+  "name": "gmandgn",
+  "version": "1.0.0",
+  "description": "Tweets posted before going to bed or after waking up, mapped.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "got": "^11.1.4",
+    "http-errors": "^1.7.3",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "pug": "^3.0.0",
+    "socket.io": "^2.3.0",
+    "twit": "^2.2.11",
+    "helmet": "^4.1.1"
+  }
+}

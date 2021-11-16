@@ -1,0 +1,253 @@
+:root {
+  /* https://blog.jim-nielsen.com/2019/generating-shades-of-color-using-css-variables/ */
+  --morning: #d54200;
+  --morning-rgb: 213, 66, 0;
+  --night: #539AF9;
+  --night-rgb: 83, 154, 249;
+  --mid: #d42183;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Harmattan", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 1.1em;
+  line-height: 1.25;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 100%;
+}
+  @media (min-width: 800px) {
+    body {
+      grid-template-columns: 30% 70%;
+      grid-template-rows: 100%;
+    }
+  }
+
+.error {
+  display: block;
+  padding: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+
+a {
+  color: var(--mid);
+}
+
+.morning {
+  color: var(--morning);
+}
+
+.night {
+  color: var(--night);
+}
+
+/* HEADER */
+
+.header {
+  height: auto;
+  display: grid;
+  grid-template-rows: auto;
+  padding: 2em;
+  text-align: center;
+}
+
+.header-withlog {
+  height: 90vh;
+  grid-template-rows: auto 1fr;
+  align-content: center;
+}
+	
+	@media (min-width: 800px) {
+		.header-withlog {
+			height: 100vh;
+		}
+	}
+
+.info {
+  grid-row: 1;
+}
+
+.title {
+  font-size: 3em;
+  line-height: 1;
+}
+
+.nav ul {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  gap: .5em;
+}
+
+.nav li {
+  list-style-type: none;
+}
+
+.stats {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.counter {
+  font-size: 2em;
+  font-family: "DM Serif Display", serif;
+  text-align: right;
+  line-height: .8;
+  display: inline-block;
+}
+
+#cesiumContainer {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+  grid-column: 1;
+  grid-row: 2;
+}
+  @media (min-width: 800px) {
+    .container {
+      grid-column: 2;
+      grid-row: 1;
+      justify-content: center;
+    }
+  }
+
+.container-withmap {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.container-text {
+  max-width: 50em;
+  padding: 2em;
+}
+
+.article-lead {
+  font-size: 2em;
+}
+
+.article-blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: .25em solid #dfe2e5;
+}
+
+.article-figure img {
+  max-width: 100%;
+}
+
+.article-figure figcaption {
+  text-align: center;
+}
+
+/* MAP */
+
+#mymap {
+  height: 100%;
+}
+
+.leaflet-container {
+  font-family: "Harmattan", sans-serif;
+  font-size: 1em;
+}
+
+.leaflet-popup-content-wrapper {
+  background: none;
+  /* color: #fff; */
+  color: var(--text);
+  box-shadow: none;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  text-align: center;
+  line-height: 1;
+}
+
+.leaflet-popup:hover .leaflet-popup-content {
+  height: auto !important;
+}
+
+.leaflet-popup-scrolled {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 0;
+}
+
+.leaflet-popup:hover .leaflet-popup-scrolled {
+  white-space: normal;
+}
+
+.leaflet-popup-tip-container {
+  display: none;
+}
+
+/* CONTROLS */
+
+.controls {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 2em;
+  z-index: 400;
+}
+
+/* LOG */
+
+.log {
+  grid-row: 2;
+  overflow-y: scroll;
+  margin-top: 1em;
+}
+
+.log:empty::before {
+  content: "Listening for a first Tweet…";
+  color: #657786;
+}
+
+.logEntry {
+  display: block;
+  padding: 1em;
+  text-align: left;
+  transition: .3s ease background-color;
+  text-decoration: none;
+}
+
+.logEntry:not(:last-of-type) {
+  border-bottom: 2px solid #CAD2D3;
+}
+
+.logEntry:hover {
+  background-color: rgba(0,0,0,.03);
+}
+
+.entryLoc {
+  display: block;
+  color: #657786;
+}

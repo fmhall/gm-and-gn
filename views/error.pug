@@ -1,0 +1,16 @@
+doctype html
+
+html
+
+  head
+
+    include includes/head.pug
+    title 🌞gm and gn🌚 &ndash; Error
+    meta(property="og:title" content="Waking and Sleeping – Error")
+
+  body(class="error")
+
+    block content
+      h1= message
+      h2= error.status
+      pre #{error.stack}

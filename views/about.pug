@@ -1,0 +1,24 @@
+doctype html
+
+html
+
+  head
+
+    include includes/head.pug
+    title 🌞gm and gn🌚 &ndash; About
+    meta(property="og:title" content="Waking and Sleeping – About")
+
+  body
+
+    header(class="header")
+      div(class="info")
+        h1(class="title") 🌞gm and gn🌚
+        nav(class="nav")
+          ul
+            li: a(href="/") Map
+            li: a(href="/about") About
+
+    main(class="container" id="container")
+      div(class="container-text")
+
+        p(class="article-lead") &ldquo;gm&rdquo; and &ldquo;gn&rdquo; tweets, mapped in real-time. Made by #[a(href="https://twitter.com/0xMasonH") Mason Hall]. Inspired by #[a(href="http://wakingandsleeping-globe.glitch.me/about") Waking and Sleeping by Katherine Yang].
